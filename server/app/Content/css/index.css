@@ -1,0 +1,30 @@
+.description {
+    display: inline-block;
+    font-size: 140%;
+}
+
+.description img {
+    float: left;
+}
+
+.title-description {
+    text-align: center;
+    font-size: 140%;
+}
+
+.text-description {
+    top: 10rem;
+}
+
+.text-purple {
+    color: #750e3a;
+}
+
+.center-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
