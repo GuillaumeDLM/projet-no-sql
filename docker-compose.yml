@@ -1,0 +1,56 @@
+version: "3.8"
+
+services:
+  apache:
+    build: ./apache/
+    container_name: apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./apache/conf/php.ini:/usr/local/etc/php/conf.d/app.ini
+      - ./apache/errors:/errors
+      - ./apache/conf/vhost.conf:/etc/apache2/sites-available/000-default.conf
+      - ./apache/conf/apache.conf:/etc/apache2/conf-available/z-app.conf
+      - ./apache/app/:/app/
+    depends_on:
+      - mongodb
+      - elasticsearch
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      - MONGO_INITDB_DATABASE=projet_nosql
+      - MONGO_INITDB_ROOT_USERNAME=mongo
+      - MONGO_INITDB_ROOT_PASSWORD=mongo
+      - MONGODB_DATA_DIR=/data/db
+      - MONDODB_LOG_DIR=/dev/null
+    volumes:
+      - mongodbdata:/data/db
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+
+  elasticsearch:
+    container_name: esdb
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.8.1
+    environment:
+      - node.name=projet-nosql-es
+      - cluster.name=es-docker-cluster
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+
+volumes:
+  mongodbdata:
+    driver: local
+  es-data:
+    driver: local
