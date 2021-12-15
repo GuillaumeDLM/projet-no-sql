@@ -22,7 +22,7 @@ services:
       - MONGODB_DATA_DIR=/data/db
       - MONDODB_LOG_DIR=/dev/null
     volumes:
-      - ./mongodb/data/:/data/db
+      - ./mongodb/mongodbdata/:/data/db
     ports:
       - 27017:27017
     restart: unless-stopped
@@ -50,7 +50,7 @@ services:
       - app
 
 volumes:
-  mongodb/data:
+  mongodbdata:
     driver: local
   es-data:
     driver: local

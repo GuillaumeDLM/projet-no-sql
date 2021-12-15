@@ -14,7 +14,7 @@
                 <p class="lead">Game testing form</p>
             </div>
             <h4 class="mb-3">Add a game</h4>
-            <form class="needs-validation" novalidate>
+            <form action="../../Controllers/games/add-game.php" method="POST" enctype="multipart/form-data">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="" value="" required>
                 <div class="invalid-feedback">
@@ -25,6 +25,7 @@
                 <div class="invalid-feedback">
                     Valid description is required.
                 </div>
+                <input type="submit" value="Ajouter">
             </form>
         </main>
     </div>
