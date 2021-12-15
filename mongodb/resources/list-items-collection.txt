@@ -1,0 +1,4 @@
+show dbs
+use projet_nosql
+show collections
+db.game.find()

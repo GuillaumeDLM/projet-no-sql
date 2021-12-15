@@ -1,0 +1,11 @@
+curl -X POST 'http://localhost:9200/projet-nosql/games' -H 'Content-Type: application/json' -d'
+{
+    "name" : "Rocket League",
+    "description" : "Rocket League is a video game developed and published by Psyonix. It was released in July 2015 on Windows and PlayStation 4, in February 2016 on Xbox One, in September 2016 on Linux and Mac and in November 2017 on Nintendo Switch."
+}'
+
+curl -X POST 'http://localhost:9200/projet-nosql/games' -H 'Content-Type: application/json' -d'
+{
+    "name" : "test",
+    "description" : "test"
+}'

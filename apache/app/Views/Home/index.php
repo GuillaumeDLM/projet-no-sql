@@ -10,7 +10,7 @@
         <main class="form-signin">
             <div class="py-5 text-center">
                 <img class="d-block mx-auto mb-4" src="../../Content/png/nosql-logo.png" alt="" width="72" height="72">
-                <h2>Project NoSQL</h2>
+                <h2>NoSQL Project</h2>
                 <p class="lead">Game testing form</p>
             </div>
             <h4 class="mb-3">Add a game</h4>

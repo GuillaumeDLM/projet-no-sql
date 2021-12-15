@@ -1,0 +1,6 @@
+curl -X GET 'http://localhost:9200/projet-nosql/games/_search' -H 'Content-Type: application/json' -d'
+{
+    "query": {
+        "match_all": {}
+    }
+}'

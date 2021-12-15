@@ -2,30 +2,23 @@
 Groupe : Guillaume DELAMOTTE, Nicolas FORGET
 
 ## Setup le projet avec Docker Compose
-docker-compose up
+```console
+docker-compose up -d
+```
 >À la racine du projet
 
-## Setup le projet manuellement
-### SERVEUR WEB APACHE PHP
-cd server
-#### Créer le conteneur
-docker build -t projet-nosql/server .
+### En cas de modification de Dockerfiles
+```console
+docker-compose build --no-cache && docker-compose up -d
+```
 
-#### Exécuter le conteneur
-docker run -it -p 8080:80 projet-nosql/server
+## Se connecter à la base Mongo en Shell
+```console
+mongosh -u test
+```
+>password = test
 
-### BASE MONGODB
-cd mongodb
-#### Créer le conteneur
-docker build -t projet-nosql/mongodb .
-
-#### Exécuter le conteneur
-docker run -it -p 3306:3307 projet-nosql/mongodb
-
-### BASE ELASTICSEARCH
-cd elasticsearch
-#### Créer le conteneur
-docker build -t projet-nosql/elasticsearch .
-
-#### Exécuter le conteneur
-docker run -it -p 3308:3309 projet-nosql/elasticsearch
+## Se connecter à la base Elasticsearch en Shell
+```console
+curl -u elastic:changeme localhost:9200
+```

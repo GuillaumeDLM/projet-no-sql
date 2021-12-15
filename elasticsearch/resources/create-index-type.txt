@@ -1,0 +1,25 @@
+curl -X POST 'http://localhost:9200/projet-nosql/games' -H 'Content-Type: application/json' -d'
+{
+    "settings": {
+        "index": {
+            "number_of_shards": 1,
+            "number_of_replicas": 1
+        },
+        "mappings": {
+            "_source": {
+                    "enabled": false
+            },
+            "properties": {
+                "_id": {
+                    "type": "int"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}'

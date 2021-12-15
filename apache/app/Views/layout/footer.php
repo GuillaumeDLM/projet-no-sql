@@ -1,5 +1,5 @@
 <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2021 Projet NoSQL - Guillaume DELAMOTTE, Nicolas FORGET</p>
+    <p class="mb-1">&copy; 2021 NoSQL Project - Guillaume DELAMOTTE, Nicolas FORGET</p>
     <ul class="list-inline">
         <li class="list-inline-item"><a href="#">Privacy</a></li>
         <li class="list-inline-item"><a href="#">Terms</a></li>
@@ -8,7 +8,7 @@
 </footer>
 
 <!-- Bootstrap JS -->
-<script src="../../Vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
