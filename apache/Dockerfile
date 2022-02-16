@@ -10,7 +10,6 @@ WORKDIR /app
 #    apt-get install -y openssl libssl-dev libcurl4-openssl-dev && \
 #    pecl install mongodb-1.11.1
 
-
 RUN apt-get update && \
     apt-get install iputils-ping libcap2 libcap2-bin libpam-cap
 
